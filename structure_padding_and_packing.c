@@ -44,7 +44,7 @@ typedef struct {
         char b;                 /* 1 byte */
         /* char pad1[7]            7 bytes */
 }
-/* So the total size will be 24 bytes bytes */
+/* So the total size will be 24 bytes */
 /* It's the same because C cannot back into the inner struct’s trailing padding */
 
 int main (void)
