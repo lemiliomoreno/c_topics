@@ -8,8 +8,8 @@
 int main (void)
 {
         /* Declaring a new pointer of type char
-         * Allocating memory for 200 records of size of char, before they used: (char*)malloc(sizeof(char)), this is wrong
-         * because it's redundant and you don't longer needed, also is more portable and no need maintenance, any type the
+         * Allocating memory for MIN_LENGTH records of size of char, before they used: (char*)malloc(sizeof(char)), this is wrong
+         * because it's redundant and you don't longer need it, also is more portable and it doesn't need maintenance, any type the
          * variable is, the allocated memory will be suficient
          */
         char *string  = malloc(MIN_LENGTH * sizeof *string);
