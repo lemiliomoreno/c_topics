@@ -1,3 +1,7 @@
+/* Bibliography: Raymond, E. (2018). The Lost Art of Structure Packing.
+ * Available at: http://www.catb.org/esr/structure-packing/ 
+ */
+
 #include <stdio.h>
 
 /* This struct will be stored like (in 64-bit OS): */
