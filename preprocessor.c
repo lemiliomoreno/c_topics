@@ -7,8 +7,7 @@
 /* Defining a function, if x > y, print x, if not, print y */
 #define GREATER(x, y) ((x) > (y) ? (x) : (y))
 
-/* Defining a value, with ifndef, define, endif, this is used in the HEADERS
- * like: 
+/* Defining a value, with ifndef, define, endif, this is used in the HEADERS like: 
  * #ifndef _HEADER_H_
  * #define _HEADER_H_
  * ...function declarations...
