@@ -38,7 +38,7 @@ int main (void)
 
         printf("First part of the code is being executed: %d\n", VALUE + 1);
 
-        # elif 0
+        #elif 0
 
         printf("Second part of the code is being executed: %d\n", GREATER(10, 5));
 
