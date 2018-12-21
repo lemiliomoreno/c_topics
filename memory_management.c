@@ -35,7 +35,6 @@ int main (void)
         }
         
         strcpy(string, "Hello my name is Emilio and I came to write a very long string.");
-        
         printf("String with re-alloc(%i): %s\n", MAX_LENGTH, string);
         
         /* The memory MUST be free before exiting the program */
