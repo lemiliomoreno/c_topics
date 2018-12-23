@@ -62,7 +62,7 @@ int main (void)
 	 * will be better because it will allocate less memory, let's try to check for
 	 * the memory stored with 100 structures of ps1 and ps2 with Valgrind:
 	 * valgrind --leak-check=yes ./structure_padding_and_packing.c
-	 * struct 1 will allocate 2400 bytes, meanwhile struct2 will store 1600 bytes
+	 * struct 1 will allocate 2400 bytes, meanwhile struct2 will allocate 1600 bytes
 	 */
 	 
 	printf("--------------------\n");
