@@ -67,6 +67,7 @@ int main (void)
 	printf("--------------------\n");
 
 	#if 1
+	
 	struct1 *ps1 = malloc(MAX_STRUCTS * sizeof *ps1);
 	
 	if (ps1 == NULL)
