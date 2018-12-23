@@ -66,15 +66,22 @@ int main (void)
 	 
 	printf("--------------------\n");
 
-	//struct1 *ps1 = malloc(MAX_STRUCTS * sizeof *ps1);
-	/*
+	#if 1
+	struct1 *ps1 = malloc(MAX_STRUCTS * sizeof *ps1);
+	
 	if (ps1 == NULL)
 	{
 		printf("Error allocating memory in ps1\n");
 		exit(EXIT_FAILURE);
-	}*/
+	}
+	
+	printf("*ps1 is a pointer, the allocated memory will be 24 bytes * 100 = 2400 bytes\n");
+	
+	free(ps1);
 	
 	struct2 *ps2 = malloc(MAX_STRUCTS * sizeof *ps2);
+	
+	#else 
 	
 	if (ps2 == NULL)
 	{
@@ -82,11 +89,11 @@ int main (void)
 		exit(EXIT_FAILURE);
 	}
 
-	//printf("*ps1 is a pointer, the allocated memory will be 24 bytes * 100 = 2400 bytes\n");
 	printf("*ps2 is a pointer, the allocated memory will be 16 bytes * 100 = 1600 bytes\n");
 
-	//free(ps1);
 	free(ps2);
 
+	#endif
+	
         return 0;
 }
