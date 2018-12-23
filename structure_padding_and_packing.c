@@ -53,7 +53,7 @@ typedef struct {
 int main (void)
 {
 	printf("Size of struct1: %d bytes\n", (int)sizeof(struct1));
-    printf("Size of struct1 packed: %d bytes\n", (int)sizeof(struct2));
+        printf("Size of struct1 packed: %d bytes\n", (int)sizeof(struct2));
 	printf("Size of struct2: %d bytes\n", (int)sizeof(struct3));
 	printf("Size of struct2 packed: %d bytes\n", (int)sizeof(struct4));
 
