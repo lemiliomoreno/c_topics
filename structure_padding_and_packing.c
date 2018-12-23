@@ -64,7 +64,10 @@ int main (void)
 	 * struct 1 will allocate 2400 bytes, meanwhile struct2 will store 1600 bytes
 	 */
 	 
-	/*struct1 *ps1 = malloc(MAX_STRUCTS * sizeof *ps1);
+	printf("--------------------\n");
+
+	//struct1 *ps1 = malloc(MAX_STRUCTS * sizeof *ps1);
+	/*
 	if (ps1 == NULL)
 	{
 		printf("Error allocating memory in ps1\n");
@@ -79,8 +82,8 @@ int main (void)
 		exit(EXIT_FAILURE);
 	}
 
-	//printf("Size of *ps1: %d\n", (int)sizeof(ps1));
-	printf("Size of *ps2: %d\n", (int)sizeof(ps2));
+	//printf("*ps1 is a pointer, the allocated memory will be 24 bytes * 100 = 2400 bytes\n");
+	printf("*ps2 is a pointer, the allocated memory will be 16 bytes * 100 = 1600 bytes\n");
 
 	//free(ps1);
 	free(ps2);
