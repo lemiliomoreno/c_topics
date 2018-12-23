@@ -3,6 +3,9 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_STRUCTS (100)
 
 /* This struct will be stored like (in 64-bit OS): */
 typedef struct {
@@ -49,10 +52,31 @@ typedef struct {
 
 int main (void)
 {
-        printf("Size of struct1: %d bytes\n", (int)sizeof(struct1));
-        printf("Size of struct1 packed: %d bytes\n", (int)sizeof(struct2));
-        printf("Size of struct2: %d bytes\n", (int)sizeof(struct3));
-        printf("Size of struct2 packed: %d bytes\n", (int)sizeof(struct4));
+	printf("Size of struct1: %d bytes\n", (int)sizeof(struct1));
+    printf("Size of struct1 packed: %d bytes\n", (int)sizeof(struct2));
+	printf("Size of struct2: %d bytes\n", (int)sizeof(struct3));
+	printf("Size of struct2 packed: %d bytes\n", (int)sizeof(struct4));
+
+	/*struct1 *ps1 = malloc(MAX_STRUCTS * sizeof *ps1);
+	if (ps1 == NULL)
+	{
+		printf("Error allocating memory in ps1\n");
+		exit(EXIT_FAILURE);
+	}*/
+	
+	struct2 *ps2 = malloc(MAX_STRUCTS * sizeof *ps2);
+	
+	if (ps2 == NULL)
+	{
+		printf("Error allocating memory in ps2\n");
+		exit(EXIT_FAILURE);
+	}
+
+	//printf("Size of *ps1: %d\n", (int)sizeof(ps1));
+	printf("Size of *ps2: %d\n", (int)sizeof(ps2));
+
+	//free(ps1);
+	free(ps2);
+
         return 0;
 }
-
