@@ -79,9 +79,9 @@ int main (void)
 	
 	free(ps1);
 	
-	struct2 *ps2 = malloc(MAX_STRUCTS * sizeof *ps2);
-	
 	#else 
+	
+	struct2 *ps2 = malloc(MAX_STRUCTS * sizeof *ps2);
 	
 	if (ps2 == NULL)
 	{
