@@ -71,7 +71,7 @@ int main (void)
 	
 	if (ps1 == NULL)
 	{
-		printf("Error allocating memory in ps1\n");
+		fprintf(stderr, "Error allocating memory in ps1\n");
 		exit(EXIT_FAILURE);
 	}
 	
@@ -85,7 +85,7 @@ int main (void)
 	
 	if (ps2 == NULL)
 	{
-		printf("Error allocating memory in ps2\n");
+		fprintf(stderr, "Error allocating memory in ps2\n");
 		exit(EXIT_FAILURE);
 	}
 
