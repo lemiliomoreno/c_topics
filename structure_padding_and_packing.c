@@ -53,9 +53,10 @@ typedef struct {
 int main (void)
 {
 	printf("Size of struct1: %d bytes\n", (int)sizeof(struct1));
-        printf("Size of struct1 packed: %d bytes\n", (int)sizeof(struct2));
+        printf("Size of struct1 packed: %d bytes, saved: %.2f%%\n", (int)sizeof(struct2), 100 - ((float)sizeof(struct2) / (float)sizeof(struct1) * 100));
 	printf("Size of struct2: %d bytes\n", (int)sizeof(struct3));
-	printf("Size of struct2 packed: %d bytes\n", (int)sizeof(struct4));
+	printf("Size of struct2 packed: %d bytes, saved: %.2f%%\n", (int)sizeof(struct4), 100 - ((float)sizeof(struct4) / (float)sizeof(struct3) * 100));
+
 
 	/* Imagine we need to allocate the space of 100 structs, the packed structure
 	 * will be better because it will allocate less memory, let's try to check for
