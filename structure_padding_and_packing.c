@@ -7,7 +7,7 @@
 
 #define MAX_STRUCTS (100)
 
-float saved_mem (float a, float b);
+float saved_mem (float packed, float padded);
 
 /* This struct will be stored like (in 64-bit OS): */
 typedef struct {
@@ -101,7 +101,7 @@ int main (void)
         return 0;
 }
 
-float saved_mem (float a, float b)
+float saved_mem (float packed, float padded)
 {
-        return (100 - ((a / b) * 100));
+        return (100 - ((packed / padded) * 100));
 }
