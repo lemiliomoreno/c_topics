@@ -13,7 +13,7 @@ typedef struct {
 }equation;
 
 void cuadratic (equation *pEquation);
-void fill_structure(char *filename, equation *pEq);
+void fill_structure (char *filename, equation *pEq);
 
 int main (int argc, char *argv[])
 {
@@ -40,7 +40,7 @@ int main (int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
-void fill_structure(char *filename, equation *pEq)
+void fill_structure (char *filename, equation *pEq)
 {
 	FILE *fp = fopen(filename, "r");
 
