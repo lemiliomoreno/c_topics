@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define TOTAL (84)
-
 typedef struct {
 	float a;
 	float b;
@@ -13,7 +11,10 @@ typedef struct {
 }equation;
 
 void cuadratic (equation *pEquation);
-void fill_structure (char *filename, equation *pEq);
+void fill_structure(char *filename, equation *pEq);
+int get_total(char *filename);
+
+long TOTAL;
 
 int main (int argc, char *argv[])
 {
@@ -22,6 +23,8 @@ int main (int argc, char *argv[])
 		fprintf(stderr, "Error\nUsage: %s filename.txt\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
+
+	TOTAL = get_total(argv[1]);
 
 	equation *eqs = malloc(TOTAL * sizeof(*eqs));
 
@@ -40,7 +43,40 @@ int main (int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
-void fill_structure (char *filename, equation *pEq)
+int get_total(char *filename)
+{
+	FILE *command;
+	char command_to_run[50];
+	char total_lines[6];
+	int len;
+	long total;
+	
+	len = sprintf(command_to_run, "wc %s", filename);
+
+	if (len >= sizeof(command_to_run))
+	{
+		fprintf(stderr, "Filename is larger than buffer\n");
+		exit(EXIT_FAILURE);
+	}
+	
+	command = popen(command_to_run, "r");
+
+	if (command == NULL)
+	{
+		fprintf(stderr, "Error running command: %s\n", command_to_run);
+                exit(EXIT_FAILURE);
+	}
+
+	fgets(total_lines, sizeof(total_lines) - 1, command);
+
+	pclose(command);
+
+	total = strtol(total_lines, NULL, 10);
+
+	return total;
+}
+
+void fill_structure(char *filename, equation *pEq)
 {
 	FILE *fp = fopen(filename, "r");
 
