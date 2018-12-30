@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define TOTAL (5)
+#define TOTAL (84)
 
 typedef struct {
 	float a;
@@ -23,8 +23,8 @@ int main (int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
- 	equation *eqs = malloc(TOTAL * sizeof(*eqs));
- 
+	equation *eqs = malloc(TOTAL * sizeof(*eqs));
+
 	if (eqs == NULL)
 	{
 		fprintf(stderr, "Error allocating memory\n");
@@ -83,16 +83,20 @@ void cuadratic (equation *pEquation)
 	
 		if (inside_sqrt < 0)
 		{
-			pEquation->first_result = 0;
-			pEquation->second_result = 0;
+			inside_sqrt *= (-1);
+			pEquation->first_result = sqrt(inside_sqrt) / (2 * a);
+			pEquation->second_result = pEquation->first_result * (-1);
+			printf("%i.- %3.0fx^2 + %3.0fx + %3.0f = 0 -> x1 = %3.4f + %3.4fi, x2 = %3.4f + %3.4fi\n", counter + 1, pEquation->a, pEquation->b, pEquation->c, b / (2 * a), pEquation->first_result, b / (2 * a), pEquation->second_result);
+
 		}
 		else
 		{
 			pEquation->first_result = ((b * (-1)) + sqrt(inside_sqrt)) / (2 * a);	
 			pEquation->second_result = ((b * (-1)) - sqrt(inside_sqrt)) / (2 * a);
+			printf("%i.- %3.0fx^2 + %3.0fx + %3.0f = 0 -> x1 = %3.4f, x2 = %3.4f\n", counter + 1, pEquation->a, pEquation->b, pEquation->c, pEquation->first_result, pEquation->second_result);
+
 		}
 	
-		printf("%i.- %3.0fx^2 + %3.0fx + %3.0f = 0 -> x1 = %3.4f, x2 = %3.4f\n", counter + 1, pEquation->a, pEquation->b, pEquation->c, pEquation->first_result, pEquation->second_result);
 		pEquation++;
 	}
 }
