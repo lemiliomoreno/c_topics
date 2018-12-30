@@ -1,3 +1,7 @@
+/* To compile:
+ * gcc -Wall -std=gnu11 cuadratic_equations.c -o cuadratic_equations -lm
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
