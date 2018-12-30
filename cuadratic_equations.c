@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define COMMAND_BUFFER_SIZE (50)
+#define TOTAL_LINES_BUFFER (6)
+#define BASE_TO_CONVERT (10)
+
 typedef struct {
 	float a;
 	float b;
@@ -46,8 +50,8 @@ int main (int argc, char *argv[])
 int get_total(char *filename)
 {
 	FILE *command;
-	char command_to_run[50];
-	char total_lines[6];
+	char command_to_run[COMMAND_BUFFER_SIZE];
+	char total_lines[TOTAL_LINES_BUFFER];
 	int len;
 	long total;
 	
@@ -71,7 +75,7 @@ int get_total(char *filename)
 
 	pclose(command);
 
-	total = strtol(total_lines, NULL, 10);
+	total = strtol(total_lines, NULL, BASE_TO_CONVERT);
 
 	return total;
 }
